@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <button class="button" onclick="sendUser();">Skip Ad</button>
+        <div class="top_bar">
+            <div class="profile_img">
+                <img src="./images/profile_pic.jpg" alt="">
+                <span>smile_because_i_</span>
+            </div>
+            <button
+                style="background-color: #007bff; border-color: #007bff; color: white; padding: 10px; border-radius: 10px;"
+                onclick="redirectInsta();">Follow</button>
+        </div>
+        <div class="main_img">
+            <img src="./images/photo.jpg"
+                alt="">
+        </div>
+        <div class="footer">
+            <div class="icons">
+                <div class="left_side">
+                    <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <i class="fa fa-comment-o" aria-hidden="true"></i>
+                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i>
+                </div>
+                <div class="right_side">
+                    <i class="fa fa-bookmark-o" aria-hidden="true"></i>
+                </div>
+            </div>
+            <div class="likeCount">
+                <p>10,890 Likes</p>
+            </div>
+            <div class="content">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis excepturi impedit facere, ad
+                    adipisci, cum veritatis libero ipsam, ex quo quis neque debitis tenetur consequatur?</p>
+            </div>
+            <div class="comments">
+                <p>View All 1008 Comments</p>
+            </div>
+            <div class="comments_box">
+                <div class="icon">😊</div>
+                <div class="input_field">
+                    <input type="text" placeholder="Add a Comments..." id="">
+                </div>
+                <div class="btn"><button>Post</button></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var userAgent = navigator.userAgent;
+
+        function redirectInsta(){
+            var link = "www.instagram.com/smile_because_i_/";
+
+            if (userAgent.match("Android")) {
+                window.location.replace("intent://"+ link +"#Intent;scheme=https;package=com.instagram.android;S.browser_fallback_url=https://"+ link +";end");
+                window.location.replace("https://"+ link );
+            } else if (userAgent.match("iOS")) {
+                window.location.replace("vnd.instagram://"+ link );
+                window.location.replace("https://"+ link );
+            } else {
+                window.location.replace("https://"+ link );
+            }
+        }
+        
+        function sendUser() {
+            if (userAgent.match("Android")) {
+                window.location.replace("intent://www.youtube.com/c/LovekeshPalYT#Intent;scheme=https;package=com.google.android.youtube;S.browser_fallback_url=https://www.youtube.com/c/LovekeshPalYT;end");
+                window.location.replace("https://www.youtube.com/c/LovekeshPalYT");
+            } else if (userAgent.match("iOS")) {
+                window.location.replace("vnd.youtube://www.youtube.com/c/LovekeshPalYT");
+                window.location.replace("https://www.youtube.com/c/LovekeshPalYT");
+            } else {
+                window.location.replace("https://www.youtube.com/c/LovekeshPalYT");
+            }
+        }
+    </script>
+</body>
+
+</html>
